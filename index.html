@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>المذاكرة | منصة تعليمية</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-primary: #0B0D17;
+        --bg-secondary: #151932;
+        --bg-tertiary: #232946;
+        --text-primary: #ffffff;
+        --text-secondary: #94a3b8;
+        --accent: #FDB813;
+        --text-log: #cbd5e1;
+      }
+
+      [data-theme='light'] {
+        --bg-primary: #f1f5f9;
+        --bg-secondary: #ffffff;
+        --bg-tertiary: #e2e8f0;
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --accent: #ca8a04;
+        --text-log: #334155;
+      }
+
+      html {
+        background-color: var(--bg-primary);
+        height: 100%;
+        overflow: hidden; /* Prevent window scroll */
+        transition: background-color 0.3s;
+      }
+
+      body {
+        font-family: 'Cairo', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        height: 100%;
+        overflow: hidden; /* Prevent window scroll */
+        transition: background-color 0.3s, color 0.3s;
+        width: 100%;
+        position: fixed; /* Lock body position */
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-primary); 
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--bg-tertiary); 
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--text-secondary); 
+      }
+      
+      /* React PDF Styles */
+      .react-pdf__Page__canvas {
+        margin: 0 auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              space: {
+                900: 'var(--bg-primary)',
+                800: 'var(--bg-secondary)',
+                700: 'var(--bg-tertiary)',
+                accent: 'var(--accent)',
+              },
+              main: 'var(--text-primary)',
+              muted: 'var(--text-secondary)',
+              log: 'var(--text-log)'
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'twinkle': 'twinkle 4s ease-in-out infinite',
+              'bounce-small': 'bounce-small 2s infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              twinkle: {
+                '0%, 100%': { opacity: '0.5' },
+                '50%': { opacity: '1' },
+              },
+              'bounce-small': {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-5px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.3.1",
+    "react/": "https://esm.sh/react@18.3.1/",
+    "react-dom": "https://esm.sh/react-dom@18.3.1",
+    "react-dom/": "https://esm.sh/react-dom@18.3.1/",
+    "react-router-dom": "https://esm.sh/react-router-dom@6.23.1?deps=react@18.3.1,react-dom@18.3.1",
+    "lucide-react": "https://esm.sh/lucide-react@0.379.0?deps=react@18.3.1",
+    "recharts": "https://esm.sh/recharts@2.12.7?deps=react@18.3.1,react-dom@18.3.1",
+    "react-pdf": "https://esm.sh/react-pdf@9.0.0?deps=react@18.3.1,react-dom@18.3.1",
+    "pdfjs-dist": "https://esm.sh/pdfjs-dist@4.3.136",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
